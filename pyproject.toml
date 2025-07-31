@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mbvlgranger"
+version = "0.1.3"
+authors = [
+    {name = "Chakattrai Sookkongwaree", email = "6632033821@student.chula.ac.th"},
+]
+description = "Multi-Band Variable-Lag Granger Causality: A Unified Framework for Causal Time Series Inference across Frequencies"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+keywords = ["granger-causality", "time-series", "neuroscience", "causality", "frequency-analysis"]
+dependencies = [
+    "numpy>=1.20.0",
+    "pandas>=1.3.0",
+    "scipy>=1.7.0",
+    "matplotlib>=3.3.0",
+    "statsmodels>=0.12.0",
+    "scikit-learn>=1.0.0",
+    "dtaidistance>=2.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.10",
+    "black>=21.0",
+    "flake8>=3.8",
+    "mypy>=0.812",
+]
+docs = [
+    "sphinx>=4.0",
+    "sphinx-rtd-theme>=0.5",
+]
+examples = [
+    "jupyter>=1.0",
+    "seaborn>=0.11",
+]
+
+[project.urls]
+Homepage = "https://github.com/Teddy50060/mbvlgranger"
+Documentation = "https://github.com/Teddy50060/mbvlgranger/docs"
+Repository = "https://github.com/Teddy50060/mbvlgranger.git"
+"Bug Tracker" = "https://github.com/Teddy50060/mbvlgranger/issues"
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mbvlgranger*"]
+
+[tool.setuptools.package-data]
+mbvlgranger = ["data/*.mat"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
